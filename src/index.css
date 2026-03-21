@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500&display=swap');
+
+:root {
+  /* Color Palette - Minimalist Wabi-Sabi Light Theme */
+  --bg-primary: #f2f2f2; /* Minimalist neutral gray */
+  --bg-secondary: #f2f2f2;
+  --text-primary: #2C2C2C; /* Soft natural black */
+  --text-secondary: #636363;
+  --accent-primary: #1E3A8A; /* Deep Blue (Aizome) */
+  --accent-secondary: #3E2723; /* Dark Roasted Coffee Brown */
+  
+  /* Gradients */
+  --gradient-bg: linear-gradient(to bottom right, #f2f2f2, #ebebeb);
+  --gradient-text: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  --gradient-button-hover: linear-gradient(135deg, #D6EAF8, #FDEBD0); /* Ultra Light Blue to Peach/Orange */
+  --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 100%);
+  
+  /* Effects */
+  --glass-bg: rgba(253, 251, 250, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.03);
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.02);
+  --glow: 0 0 25px rgba(30, 58, 138, 0.05); /* very soft blue glow */
+  
+  /* Spacing */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* slightly slower for calm feel */
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  /* extremely subtle wabi-sabi appropriate gradients */
+  background-image: radial-gradient(circle at 10% 30%, rgba(30, 58, 138, 0.03), transparent 30%),
+                    radial-gradient(circle at 80% 70%, rgba(62, 39, 35, 0.04), transparent 35%);
+  color: var(--text-primary);
+  line-height: 1.8; /* looser line height for readability and calm */
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-weight: 300; /* Lighter font weight for wabi-sabi airy feel */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-secondary); /* Hover over to coffee brown */
+}
+
+ul {
+  list-style: none;
+}
+
+/* Typography Utilities */
+.text-gradient {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.heading-xl {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  letter-spacing: 0.02em; /* wider tracking for serif feels more elegant */
+}
+
+.heading-lg {
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: 0.01em;
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.glass-card {
+  background: var(--gradient-card);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px; /* Less rounded for a slightly more traditional/zen feel */
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.glass-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg), var(--glow);
+  border-color: rgba(30, 58, 138, 0.05); /* very soft blue border on hover */
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 7rem 0;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2.2rem;
+  border-radius: 50px; /* Fully rounded */
+  font-weight: 500; /* slightly bolder for glass */
+  font-family: 'Noto Sans TC', sans-serif;
+  letter-spacing: 0.05em; /* slightly less spacing for pills */
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  white-space: nowrap; /* Prevent Chinese text from wrapping vertically */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.btn-primary {
+  background: rgba(44, 44, 44, 0.85); /* Semi-transparent dark glass */
+  color: #fff;
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.1), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--gradient-text); /* Wabi-Sabi gradient */
+  z-index: -1;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 40px 0 rgba(30, 58, 138, 0.2), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.btn-primary:hover::before {
+  opacity: 1; /* fades in the hover gradient */
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.4); /* Light glass */
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: var(--text-primary);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--gradient-button-hover); /* Light Blue & Orange gradient */
+  z-index: -1;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.btn-outline:hover {
+  transform: translateY(-2px);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    0 10px 40px 0 rgba(147, 197, 253, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.btn-outline:hover::before {
+  opacity: 1; /* fades in the pastel hover gradient */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s var(--transition-normal) forwards;
+}
+
+/* Header Navigation Specific Styles */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.header-links a {
+  white-space: nowrap; /* Prevents text splitting across lines on shrink */
+}
+
+.lang-toggle {
+  background: transparent;
+  border: 1px solid var(--text-secondary);
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-family: inherit;
+  gap: 0.4rem;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.lang-toggle span {
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.2rem;
+  }
+  .section {
+    padding: 5rem 0;
+  }
+  .hero-padding {
+    padding-top: 160px !important;
+  }
+  .glass-card {
+    padding: 1.5rem !important; /* give cards more room to breathe on mobile */
+  }
+  .header .container {
+    padding: 0 1rem;
+    flex-direction: column; /* Stack Logo and Nav on Mobile */
+    gap: 1rem;
+  }
+  .header-nav {
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: center; /* Centered Navigation elements underneath logo */
+  }
+  .header-links {
+    gap: 1.5rem;
+  }
+  .header-links a {
+    font-size: 0.95rem;
+  }
+  .lang-toggle {
+    padding: 0.2rem 0.5rem;
+  }
+  .logo h2 {
+    font-size: 1.6rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ultra-narrow devices */
+  .header .container {
+    gap: 0.8rem;
+  }
+  .header-nav {
+    gap: 1rem;
+  }
+  .header-links {
+    gap: 1rem;
+  }
+  .header-links a {
+    font-size: 0.85rem;
+  }
+  .logo h2 {
+    font-size: 1.4rem !important;
+  }
+  .lang-toggle {
+    padding: 0.2rem 0.6rem;
+  }
+  .lang-toggle span {
+    font-size: 0.8rem;
+  }
+}
