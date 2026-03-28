@@ -8,8 +8,8 @@ const ProjectsPage = () => {
   const [filter, setFilter] = useState('all');
   
   const content = {
-    en: { title: "All", subtitle: "Projects", filterAll: "All", code: "Code", live: "Live" },
-    zh: { title: "所有", subtitle: "作品", filterAll: "全部", code: "原始碼", live: "預覽" }
+    en: { title: "All", subtitle: "Projects", filterAll: "All", code: "Code", live: "Website", appStore: "App Store" },
+    zh: { title: "所有", subtitle: "作品", filterAll: "全部", code: "GitHub", live: "網站", appStore: "App Store" }
   };
   
   const categories = ['all', 'app dev', 'ai', 'design'];
@@ -55,8 +55,21 @@ const ProjectsPage = () => {
               </div>
             </div>
             <div style={{ display: 'flex', gap: '1rem', width: '100%', flexWrap: 'wrap' }}>
-              <a href="#" className="btn btn-outline" style={{ padding: '0.5rem', flex: 1, minWidth: '120px', justifyContent: 'center', borderRadius: '30px' }}><Github size={18} style={{ marginRight: '0.5rem' }}/> {content[lang].code}</a>
-              <a href="#" className="btn btn-primary" style={{ padding: '0.5rem', flex: 1, minWidth: '120px', justifyContent: 'center', borderRadius: '30px' }}><ExternalLink size={18} style={{ marginRight: '0.5rem' }}/> {content[lang].live}</a>
+              {project.github && (
+                <a href={project.github} target="_blank" rel="noreferrer" className="btn btn-outline" style={{ padding: '0.5rem', flex: 1, minWidth: '120px', justifyContent: 'center', borderRadius: '30px' }}>
+                  <Github size={18} style={{ marginRight: '0.5rem' }}/> {content[lang].code}
+                </a>
+              )}
+              {project.website && (
+                <a href={project.website} target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '0.5rem', flex: 1, minWidth: '120px', justifyContent: 'center', borderRadius: '30px' }}>
+                  <ExternalLink size={18} style={{ marginRight: '0.5rem' }}/> {content[lang].live}
+                </a>
+              )}
+              {project.appStore && (
+                <a href={project.appStore} target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '0.5rem', flex: 1, minWidth: '120px', justifyContent: 'center', borderRadius: '30px' }}>
+                  <ExternalLink size={18} style={{ marginRight: '0.5rem' }}/> {content[lang].appStore}
+                </a>
+              )}
             </div>
           </div>
         ))}

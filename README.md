@@ -69,3 +69,16 @@
 - `npm run dev`：在本地電腦上啟動開發伺服器，並即時預覽您修改的內容。
 - `npm run build`：將網頁全部打包、優化並壓縮（如果只是一般發布不需特別單獨執行這步）。
 - `npm run deploy`：將網站的最新版本**正式發布並推送到您的 GitHub Pages 上**，這是您最後完成修改後一定要下的指令！
+
+---
+
+### ⚠️ 首次發布 GitHub Pages 注意事項
+
+如果是**第一次**發佈到 `<帳號>.github.io` 此類型的個人專案，如果執行 deploy 後，點進去專屬網址只看到這份 README 純文字文件，而不是網頁畫面，請至 GitHub 進行以下設定：
+
+1. 開啟瀏覽器進入您的 GitHub 專案倉庫頁面 (例如: `https://github.com/您的帳號/您的帳號.github.io`)。
+2. 點擊上方的 **Settings (設定)** 標籤。
+3. 在左側選單中往下滑，點選 **Pages (頁面)**。
+4. 找到 **Build and deployment** 區塊，將 Source 確認選為 `Deploy from a branch`。
+5. 在下方的 **Branch** 選單中，將預設的 `main` 切換為 **`gh-pages`**，後面的資料夾維持 `/ (root)`，然後點擊旁邊的 **Save (儲存)**。
+6. GitHub 在您按下儲存後會進行背景部署，請大約等待 1-3 分鐘後重新整理您的專屬網址，就能看見漂亮的網站了！

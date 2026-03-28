@@ -141,6 +141,21 @@ ul {
   justify-content: space-between;
 }
 
+/* Contact Card Formatting */
+.contact-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.contact-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -289,6 +304,14 @@ ul {
   }
   .glass-card {
     padding: 1.5rem !important; /* give cards more room to breathe on mobile */
+  }
+  .contact-card {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .contact-card-content {
+    align-items: center;
   }
   .header .container {
     padding: 0 1rem;

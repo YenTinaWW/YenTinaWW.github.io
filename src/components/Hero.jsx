@@ -9,14 +9,14 @@ const Hero = () => {
     en: {
       hello: "Hello, I'm",
       name: "Tina Wang",
-      description: "I build modern, engaging user experiences and robust web applications. Passionate about transforming ideas into elegant, responsive digital products.",
+      description: "A recent graduate with hands-on experience in UI/UX design, machine learning, user research, and LLM integrations. I am passionate about crafting elegant digital products and aspire to thrive as a developer bridging the gap between innovative AI solutions and intuitive frontend experiences.",
       viewWork: "View Work",
       letsTalk: "Let's Talk"
     },
     zh: {
       hello: "你好，我是",
       name: "王彥婷",
-      description: "我專注於打造現代化、流暢的使用者體驗與強大的網頁應用程式。熱衷於將各種想法轉化為優雅且具響應式的數位產品。",
+      description: "我是一名剛畢業的新鮮人，在大學與研究所期間累積了 UI/UX 設計、語言模型 API 串接、機器學習與使用者研究的實務經驗。未來期待能成為熟稔 AI 與前端技術的開發者，將創新思維轉化為優雅直覺的數位產品。",
       viewWork: "查看作品",
       letsTalk: "聯絡我"
     }
@@ -50,7 +50,7 @@ const Hero = () => {
             <a href="https://github.com/YenTinaWW" target="_blank" rel="noopener noreferrer" className="text-secondary" style={{ transition: 'color var(--transition-fast)' }}>
               <Github size={24} />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="text-secondary" style={{ transition: 'color var(--transition-fast)' }}>
+            <a href="https://www.linkedin.com/in/yentina-wang/" target="_blank" rel="noopener noreferrer" className="text-secondary" style={{ transition: 'color var(--transition-fast)' }}>
               <Linkedin size={24} />
             </a>
           </div>

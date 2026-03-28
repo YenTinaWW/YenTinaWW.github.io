@@ -12,15 +12,17 @@ const Projects = () => {
       titlePrefix: "Featured",
       titleSuffix: "Projects",
       code: "Code",
-      live: "Live",
-      viewAll: "View All Projects"
+      live: "Website",
+      viewAll: "View All Projects",
+      appStore: "App Store"
     },
     zh: {
       titlePrefix: "精選",
       titleSuffix: "作品",
-      code: "原始碼",
-      live: "預覽",
-      viewAll: "查看所有專案"
+      code: "GitHub",
+      live: "網站",
+      viewAll: "查看所有專案",
+      appStore: "App Store"
     }
   };
 
@@ -67,12 +69,21 @@ const Projects = () => {
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '1rem', width: '100%', flexWrap: 'wrap' }}>
-                <a href="#" className="btn btn-outline" style={{ padding: '0.5rem 1rem', flex: 1, minWidth: '120px', justifyContent: 'center', borderRadius: '30px' }}>
-                  <Github size={18} style={{ marginRight: '0.5rem' }} /> {content[lang].code}
-                </a>
-                <a href="#" className="btn btn-primary" style={{ padding: '0.5rem 1rem', flex: 1, minWidth: '120px', justifyContent: 'center', borderRadius: '30px' }}>
-                  <ExternalLink size={18} style={{ marginRight: '0.5rem' }} /> {content[lang].live}
-                </a>
+                {project.github && (
+                  <a href={project.github} target="_blank" rel="noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', flex: 1, minWidth: '120px', justifyContent: 'center', borderRadius: '30px' }}>
+                    <Github size={18} style={{ marginRight: '0.5rem' }} /> {content[lang].code}
+                  </a>
+                )}
+                {project.website && (
+                  <a href={project.website} target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '0.5rem 1rem', flex: 1, minWidth: '120px', justifyContent: 'center', borderRadius: '30px' }}>
+                    <ExternalLink size={18} style={{ marginRight: '0.5rem' }} /> {content[lang].live}
+                  </a>
+                )}
+                {project.appStore && (
+                  <a href={project.appStore} target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '0.5rem 1rem', flex: 1, minWidth: '120px', justifyContent: 'center', borderRadius: '30px' }}>
+                    <ExternalLink size={18} style={{ marginRight: '0.5rem' }} /> {content[lang].appStore}
+                  </a>
+                )}
               </div>
             </div>
           ))}

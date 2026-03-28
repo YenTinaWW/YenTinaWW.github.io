@@ -7,16 +7,16 @@ const Contact = () => {
   
   const content = {
     en: {
-      titlePrefix: "Let's",
-      titleSuffix: "Work Together",
-      description: "I'm currently available for freelance work and open to new opportunities. Whether you have a project in mind or just want to say hi, feel free to reach out.",
+      titlePrefix: "Get In",
+      titleSuffix: "Touch",
+      description: "I am actively seeking full-time opportunities where I can contribute my skills in UI/UX, AI, and frontend development. Whether you have an open role or just want to connect, feel free to reach out.",
       emailMe: "Email Me",
       socialMedia: "Social Media"
     },
     zh: {
-      titlePrefix: "預約",
-      titleSuffix: "合作提案",
-      description: "我目前有空承接接案工作，並開放任何新的合作機會。無論您有任何專案想法，或是單純想交流，都歡迎隨時聯絡我。",
+      titlePrefix: "保持",
+      titleSuffix: "聯繫",
+      description: "我目前正在積極尋求前端開發與 AI 相關的正職工作機會。如果您有合適的職缺，或是單純想交流交流，都非常歡迎隨時與我聯絡！",
       emailMe: "寄信給我",
       socialMedia: "社群網站"
     }
@@ -33,24 +33,28 @@ const Contact = () => {
         </p>
         
         <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-          <div className="glass-card flex-center" style={{ flexDirection: 'column', gap: '1rem', flex: '1 1 250px', maxWidth: '350px' }}>
-            <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: 'rgba(30, 58, 138, 0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-primary)' }}>
+          <div className="glass-card contact-card" style={{ gap: '1.5rem', flex: '1 1 300px', maxWidth: '400px' }}>
+            <div style={{ flexShrink: 0, width: '60px', height: '60px', borderRadius: '50%', backgroundColor: 'rgba(30, 58, 138, 0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-primary)' }}>
               <Mail size={28} />
             </div>
-            <h3 style={{ fontSize: '1.2rem' }}>{content[lang].emailMe}</h3>
-            <a href="mailto:hello@example.com" className="text-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              hello@example.com <ArrowRight size={16} />
-            </a>
+            <div className="contact-card-content" style={{ gap: '0.3rem' }}>
+              <h3 style={{ fontSize: '1.2rem', margin: 0 }}>{content[lang].emailMe}</h3>
+              <a href="mailto:tinawang0202@gmail.com" className="text-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.95rem' }}>
+                tinawang0202@gmail.com <ArrowRight size={14} />
+              </a>
+            </div>
           </div>
           
-          <div className="glass-card flex-center" style={{ flexDirection: 'column', gap: '1rem', flex: '1 1 250px', maxWidth: '350px' }}>
-            <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: 'rgba(62, 39, 35, 0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-primary)' }}>
+          <div className="glass-card contact-card" style={{ gap: '1.5rem', flex: '1 1 300px', maxWidth: '400px' }}>
+            <div style={{ flexShrink: 0, width: '60px', height: '60px', borderRadius: '50%', backgroundColor: 'rgba(62, 39, 35, 0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-primary)' }}>
               <MessageSquare size={28} />
             </div>
-            <h3 style={{ fontSize: '1.2rem' }}>{content[lang].socialMedia}</h3>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              LinkedIn <ArrowRight size={16} />
-            </a>
+            <div className="contact-card-content" style={{ gap: '0.3rem' }}>
+              <h3 style={{ fontSize: '1.2rem', margin: 0 }}>{content[lang].socialMedia}</h3>
+              <a href="https://www.linkedin.com/in/yentina-wang/" target="_blank" rel="noopener noreferrer" className="text-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.95rem' }}>
+                LinkedIn <ArrowRight size={14} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
